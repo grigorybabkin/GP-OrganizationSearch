@@ -1,0 +1,14 @@
+.container {
+  background: aliceblue;
+  border-bottom: 2px solid lightblue;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 100%; }
+  @media (max-width: 768px) {
+    .container {
+      padding: 35px 25px; } }
+
+/*# sourceMappingURL=PartySearch.module.css.map */

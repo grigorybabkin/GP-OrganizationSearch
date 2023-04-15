@@ -1,0 +1,45 @@
+@import "../../styles/variables.scss";
+
+.container {
+  max-width: $combobox_max-width + 100px;
+  margin: 0 auto;
+  padding: 50px;
+
+  @media (max-width: $screen-sm) {
+    padding: 25px;
+  }
+
+  .no_party_message {
+    text-align: center;
+    margin-top: 50px;
+    color: darkgray;
+  }
+  .party_info {
+    &__header {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    &__grid_view {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+
+      @media (max-width: $screen-sm) {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+    &__property_name {
+      font-weight: bold;
+    }
+    &__branches {
+      &:hover {
+        cursor: pointer;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+
+

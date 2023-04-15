@@ -1,0 +1,83 @@
+@import "../../styles/variables.scss";
+
+.container {
+  position: relative;
+  height: $combobox_height;
+  min-width: $combobox_min-width;
+  max-width: $combobox_max-width;
+  width: 100%;
+}
+
+.combobox {
+  width: 100%;
+  border-radius: 4px;
+
+  input {
+    width: 100%;
+    height: $combobox_height;
+    font-size: 18px;
+    line-height: 150%;
+    padding: 0 8px;
+    outline: none;
+    border: 1px solid $primary;
+
+    &:focus {
+      border: 2px solid $primary;
+    }
+  }
+
+  ul {
+    position: relative;
+    z-index: 1;
+    background: white;
+    width: 100%;
+    list-style: none;
+    padding: 4px 0 8px 0;
+    border: 1px solid $primary;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    font-size: 12px;
+    line-height: 250%;
+    overflow-y: auto;
+
+    li {
+      padding: 0 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-bottom: 1px solid $primary;
+
+      &:last-child {
+        border: none;
+      }
+
+      &:hover {
+        background: $primary;
+        color: white;
+      }
+    }
+  }
+
+  &_opened {
+    @extend .combobox;
+    border-radius: 4px 4px 8px 8px;
+    box-shadow: 0 0 10px 2px $primary;
+
+    input {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  &_closed {
+    @extend .combobox;
+
+    input {
+      border-radius: 4px;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+}
+
